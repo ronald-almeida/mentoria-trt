@@ -3,7 +3,7 @@ const API_BASE = 'https://api.gatewaypayshark.com.br';
 const PRODUCT = Object.freeze({
   name: 'MENTORIA TRT NO ALVO',
   description: 'MENTORIA TRT NO ALVO - Renata Fayad',
-  amount: 9770,
+  amount: 39770,
   currency: 'BRL',
   type: 'DIGITAL'
 });
