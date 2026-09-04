@@ -1,1 +1,123 @@
-PLACEHOLDER
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#f7f6f3" />
+  <title>MENTORIA TRT NO ALVO | Checkout</title>
+  <meta name="description" content="Checkout da Mentoria TRT no Alvo" />
+  <link rel="stylesheet" href="/styles.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <main class="page-shell">
+    <section class="checkout-card">
+      <header class="checkout-topbar">
+        <div class="brand-mark" aria-label="Checkout seguro">
+          <span class="brand-dot">●</span>
+          <strong>checkout seguro</strong>
+        </div>
+        <button type="button" class="country-button" aria-label="Alterar país">
+          <span class="country-code">BR</span>
+          <strong>Alterar país</strong>
+          <span class="caret">⌄</span>
+        </button>
+      </header>
+
+      <section class="product-summary">
+        <img class="product-image" src="/product.webp" alt="Mentoria TRT no Alvo" />
+        <div class="product-copy">
+          <h1>MENTORIA TRT NO ALVO</h1>
+          <p>Autor: Renata Fayad</p>
+          <strong class="product-price">R$ 397,70</strong>
+          <span class="product-payment-note">pagamento à vista via Pix</span>
+        </div>
+        <button id="detailsToggle" class="details-button" type="button" aria-expanded="false">Detalhes <span>⌄</span></button>
+      </section>
+
+      <div id="detailsPanel" class="details-panel hidden">
+        <div><span>MENTORIA TRT NO ALVO</span><strong>R$ 397,70</strong></div>
+        <div class="details-total"><span>Total</span><strong>R$ 397,70</strong></div>
+      </div>
+
+      <form id="checkoutForm" novalidate>
+        <section class="form-section">
+          <h2>Dados pessoais</h2>
+          <label class="field-label" for="email">Seu email</label>
+          <input id="email" class="text-input" type="email" autocomplete="email" placeholder="Digite seu email para receber a compra" required />
+
+          <label class="field-label" for="emailConfirm">Confirme seu email</label>
+          <input id="emailConfirm" class="text-input" type="email" autocomplete="email" placeholder="Digite novamente seu email" required />
+
+          <label class="field-label" for="name">Nome completo</label>
+          <input id="name" class="text-input" type="text" autocomplete="name" placeholder="Digite seu nome completo" required />
+
+          <label class="field-label" for="phone">Celular</label>
+          <div class="phone-wrap">
+            <div class="phone-prefix"><span>BR</span><strong>+55</strong><span class="caret">⌄</span></div>
+            <input id="phone" class="phone-input" type="tel" inputmode="numeric" autocomplete="tel" placeholder="(11) 96123-4567" required />
+          </div>
+        </section>
+
+        <section class="form-section payment-section">
+          <h2>Escolha a forma de pagamento</h2>
+          <div class="payment-card">
+            <div class="payment-head">
+              <span class="radio selected" aria-hidden="true"></span>
+              <span class="pix-glyph">◆</span>
+              <strong>Pix</strong>
+            </div>
+
+            <div class="payment-content">
+              <div class="payment-left">
+                <div class="access-note"><span>✓</span><p>Após o pagamento, você receberá por email as informações de acesso à sua compra.</p></div>
+
+                <label class="field-label" for="taxId">Documento</label>
+                <input id="taxId" class="text-input" type="text" inputmode="numeric" placeholder="CPF/CNPJ" required />
+
+                <button id="generatePixBtn" class="generate-button" type="submit">
+                  <span class="qr-mini">⌘</span>
+                  <span>Gerar código QR</span>
+                </button>
+                <button id="copyInlineBtn" class="copy-inline-button" type="button" disabled>Copiar código Pix</button>
+              </div>
+              <div class="qr-placeholder" aria-hidden="true">
+                <span></span><span></span><span></span><span></span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <p id="formMessage" class="form-message" role="alert" aria-live="polite"></p>
+      </form>
+
+      <section class="purchase-details">
+        <h2>Detalhes da compra</h2>
+        <div class="purchase-line"><strong>MENTORIA TRT NO ALVO</strong><strong>R$ 397,70</strong></div>
+      </section>
+
+      <div class="secure-footer">🔒 Pagamento seguro e criptografado</div>
+    </section>
+  </main>
+
+  <div id="pixModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="pixModalTitle">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-card">
+      <div class="modal-handle"></div>
+      <button type="button" class="modal-close" data-close-modal aria-label="Fechar">×</button>
+      <div class="modal-header">
+        <div class="modal-pix">◆</div>
+        <div><span>Pagamento instantâneo</span><h2 id="pixModalTitle">Pague com Pix</h2></div>
+      </div>
+      <div class="modal-total"><span>Total da compra</span><strong>R$ 397,70</strong></div>
+      <p>Escaneie o QR Code no aplicativo do seu banco ou copie o código Pix abaixo.</p>
+      <div class="qr-shell"><div id="modalQr"></div></div>
+      <label for="pixCode">Pix Copia e Cola</label>
+      <textarea id="pixCode" rows="4" readonly></textarea>
+      <button id="copyModalBtn" class="modal-copy-button" type="button">Copiar código Pix</button>
+      <div class="modal-secure">🔒 Pagamento processado com segurança</div>
+    </div>
+  </div>
+</body>
+</html>
