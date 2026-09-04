@@ -15,8 +15,7 @@
     <section class="checkout-card">
       <header class="checkout-topbar">
         <div class="brand-mark" aria-label="Checkout seguro">
-          <span class="brand-dot">●</span>
-          <strong>checkout seguro</strong>
+          <img class="checkout-secure-logo" src="/assets/checkout-seguro.svg" alt="Hotmart" />
         </div>
         <button type="button" class="country-button" aria-label="Alterar país">
           <span class="country-code">BR</span>
@@ -65,7 +64,7 @@
           <div class="payment-card">
             <div class="payment-head">
               <span class="radio selected" aria-hidden="true"></span>
-              <span class="pix-glyph">◆</span>
+              <img class="pix-icon" src="/assets/pix.svg" alt="" aria-hidden="true" />
               <strong>Pix</strong>
             </div>
 
@@ -77,13 +76,13 @@
                 <input id="taxId" class="text-input" type="text" inputmode="numeric" placeholder="CPF/CNPJ" required />
 
                 <button id="generatePixBtn" class="generate-button" type="submit">
-                  <span class="qr-mini">⌘</span>
+                  <img class="qr-button-icon" src="/assets/qrcode.svg" alt="" aria-hidden="true" />
                   <span>Gerar código QR</span>
                 </button>
                 <button id="copyInlineBtn" class="copy-inline-button" type="button" disabled>Copiar código Pix</button>
               </div>
               <div class="qr-placeholder" aria-hidden="true">
-                <span></span><span></span><span></span><span></span>
+                <img src="/assets/qrcode.svg" alt="" />
               </div>
             </div>
           </div>
@@ -97,7 +96,10 @@
         <div class="purchase-line"><strong>MENTORIA TRT NO ALVO</strong><strong>R$ 397,70</strong></div>
       </section>
 
-      <div class="secure-footer">🔒 Pagamento seguro e criptografado</div>
+      <div class="secure-footer">
+        <span>Protegido por</span>
+        <img src="/assets/protegido-por.svg" alt="Hotmart" />
+      </div>
     </section>
   </main>
 
@@ -107,7 +109,7 @@
       <div class="modal-handle"></div>
       <button type="button" class="modal-close" data-close-modal aria-label="Fechar">×</button>
       <div class="modal-header">
-        <div class="modal-pix">◆</div>
+        <div class="modal-pix"><img src="/assets/pix.svg" alt="" aria-hidden="true" /></div>
         <div><span>Pagamento instantâneo</span><h2 id="pixModalTitle">Pague com Pix</h2></div>
       </div>
       <div class="modal-total"><span>Total da compra</span><strong>R$ 397,70</strong></div>
@@ -116,7 +118,7 @@
       <label for="pixCode">Pix Copia e Cola</label>
       <textarea id="pixCode" rows="4" readonly></textarea>
       <button id="copyModalBtn" class="modal-copy-button" type="button">Copiar código Pix</button>
-      <div class="modal-secure">🔒 Pagamento processado com segurança</div>
+      <div class="modal-secure">Pagamento processado com segurança</div>
     </div>
   </div>
 </body>
