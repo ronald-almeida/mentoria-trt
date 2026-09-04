@@ -117,20 +117,68 @@
 
   <div id="pixModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="pixModalTitle">
     <div class="modal-backdrop" data-close-modal></div>
-    <div class="modal-card">
+    <div class="modal-card pix-modal-card">
       <div class="modal-handle"></div>
       <button type="button" class="modal-close" data-close-modal aria-label="Fechar">×</button>
-      <div class="modal-header">
-        <div class="modal-pix"><img src="/assets/pix.svg" alt="" aria-hidden="true" /></div>
-        <div><span>Pagamento instantâneo</span><h2 id="pixModalTitle">Pague com Pix</h2></div>
+
+      <div class="pix-success-badge">
+        <span class="pix-success-dot">✓</span>
+        <span>Pix gerado com sucesso</span>
       </div>
-      <div class="modal-total"><span>Total da compra</span><strong>R$ 397,70</strong></div>
-      <p>Escaneie o QR Code no aplicativo do seu banco ou copie o código Pix abaixo.</p>
-      <div class="qr-shell"><div id="modalQr"></div></div>
-      <label for="pixCode">Pix Copia e Cola</label>
-      <textarea id="pixCode" rows="4" readonly></textarea>
-      <button id="copyModalBtn" class="modal-copy-button" type="button">Copiar código Pix</button>
-      <div class="modal-secure">Pagamento processado com segurança</div>
+
+      <div class="modal-header pix-modal-header">
+        <div class="modal-pix"><img src="/assets/pix.svg" alt="" aria-hidden="true" /></div>
+        <div>
+          <span>Pagamento instantâneo</span>
+          <h2 id="pixModalTitle">Finalize seu pagamento</h2>
+        </div>
+      </div>
+
+      <div class="modal-total pix-total-card">
+        <div>
+          <span>Total da compra</span>
+          <small>MENTORIA TRT NO ALVO</small>
+        </div>
+        <strong>R$ 397,70</strong>
+      </div>
+
+      <div class="pix-modal-grid">
+        <div class="pix-qr-column">
+          <div class="qr-shell pix-qr-shell"><div id="modalQr"></div></div>
+          <span class="qr-caption">Aponte a câmera do app do seu banco para o QR Code</span>
+        </div>
+
+        <div class="pix-steps-column">
+          <h3>Como pagar</h3>
+          <div class="pix-step"><span>1</span><p>Abra o aplicativo do seu banco e escolha <strong>Pix</strong>.</p></div>
+          <div class="pix-step"><span>2</span><p>Escaneie o QR Code ou use a opção <strong>Pix Copia e Cola</strong>.</p></div>
+          <div class="pix-step"><span>3</span><p>Confira o valor de <strong>R$ 397,70</strong> e confirme o pagamento.</p></div>
+        </div>
+      </div>
+
+      <div class="pix-copy-card">
+        <div class="pix-copy-heading">
+          <div>
+            <span>Outra opção</span>
+            <strong>Pix Copia e Cola</strong>
+          </div>
+          <img src="/assets/pix.svg" alt="" aria-hidden="true" />
+        </div>
+        <textarea id="pixCode" rows="3" readonly aria-label="Código Pix Copia e Cola"></textarea>
+        <button id="copyModalBtn" class="modal-copy-button" type="button">
+          <span>Copiar código Pix</span>
+        </button>
+      </div>
+
+      <div class="pix-warning">
+        <span aria-hidden="true">ⓘ</span>
+        <p>Após pagar, aguarde a confirmação no seu banco. Você receberá as informações de acesso no email informado.</p>
+      </div>
+
+      <div class="modal-secure pix-modal-secure">
+        <span>Protegido por</span>
+        <img src="/assets/protegido-por.svg" alt="Hotmart" />
+      </div>
     </div>
   </div>
 </body>
